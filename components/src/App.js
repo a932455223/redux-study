@@ -5,7 +5,9 @@ function info(msg,color='red'){
 }
 class Message extends Component{
 
-    componentWillReceiveProps(){
+    componentWillReceiveProps(pre,next){
+        console.dir(pre)
+        console.dir(next)
         info('I will receive.')
     }
 
