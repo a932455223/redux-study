@@ -1,8 +1,21 @@
-import React,{PropsType} from 'react'
+import React,{PropTypes,Component} from 'react'
+import { connect } from 'react-redux'
+function info(msg,color='green'){
+    console.log('%c'+msg,'color:'+color);
+}
 
-const firstName = ({firstName}) => (<span>{firstName}</span>);
-firstName.propTypes = {
-    firstName:PropsType.string.isRequired
+class FirstName extends Component{
+    static propTypes = {
+        firstName:PropTypes.string.isRequired
+    }
+
+    componentWillReceiveProps(){
+        info('firstName received props')
+    }
+
+    render(){
+        return (<p>firstName:<span>{this.props.firstName}</span></p>)
+    }
 }
 
 function mapStateToProps(store){
@@ -11,4 +24,4 @@ function mapStateToProps(store){
     }
 }
 
-export defautl connect(mapStateToProps)(firstName)
+export default connect(mapStateToProps)(FirstName)
