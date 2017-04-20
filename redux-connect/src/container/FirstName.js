@@ -14,7 +14,7 @@ class FirstName extends Component{
     }
 
     render(){
-        return (<p>firstName:<span>{this.props.firstName}</span></p>)
+        return (<p>firstName:<span>{this.props.firstName}</span> <span>age:{this.props.age}</span></p>)
     }
 }
 

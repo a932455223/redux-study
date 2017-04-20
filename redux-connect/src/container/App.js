@@ -13,7 +13,7 @@ render(){
         <div>
             <Input text='firstName' handleChange={(val) => {dispatch(actions.updateFirstname(val))}} />
             <Input text='secondName' handleChange={(val) => {dispatch(actions.updateSecondname(val))}} />
-            <FirstName />
+            <FirstName age="10"/>
             <SecondName />
         </div>
     )
